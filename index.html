@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Mo Works Homework - Basic JavaScript API</title>
+
+    <!-- My Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+  <body>
+    
+  <div class="sticky-footer">
+    
+    <nav class="background-overlay">
+      <div class="container navigation">
+        <a href="index.html"><img src="img/flickr.svg" alt="flickr logo" class="logo"></a>
+        <div class="nav-bar">
+          <ul class="nav-items">
+            <li class="nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item"><a href="categories.html">Categories</a></li>
+            <li class="nav-item"><a href="#">Lorem Ipsum</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="background-color">
+      <div class="container search-section">
+        <h1 class="main-heading text-center">Find your favourite photos on Flickr!</h1>
+        <form id="search">
+          <input id="searchValue" type="search" placeholder="Search here" required>
+          <input type="submit" value="Search">
+        </form>    
+      </div>    
+    </div>
+    
+    <div class="container">
+      <!-- Callback function -->
+      <ul id="gallery" class="gallery-photos">
+        <!-- Generated HTML from the API -->
+        <!-- <li class="photo-item"><a href="#"><img class="photo" src="http://placehold.it/500x375"></a></li>    
+        <li class="photo-item"><img class="photo" src="http://placehold.it/500x375"></li>
+        <li class="photo-item"><img class="photo" src="http://placehold.it/500x375"></li>
+        
+        <li class="photo-item"><img class="photo" src="http://placehold.it/500x375"></li>    
+        <li class="photo-item"><img class="photo" src="http://placehold.it/500x375"></li>
+        <li class="photo-item"><img class="photo" src="http://placehold.it/500x375"></li>-->
+      </ul>
+    </div>
+    
+  </div>
+    
+    <footer>
+        <div class="footer">
+          <div class="footer-col-1">
+            <p>Copyright &copy; 2017</p>
+          </div>
+          <div class="footer-col-2">
+            <p>Made by Ken Chung</p>
+          </div>
+        </div>   
+    </footer>
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

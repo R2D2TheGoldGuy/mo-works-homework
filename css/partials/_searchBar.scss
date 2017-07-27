@@ -1,0 +1,69 @@
+// Search widget
+
+.background-color {
+  background-color: #f4f4f4;
+  /* background: linear-gradient(0deg, rgba(0,0,0,0.4), transparent 200%), url("../img/header-background.jpg") no-repeat center;
+  background-size: cover; */
+  /* linear-gradient(#F9690E, transparent 80%),
+              linear-gradient(0deg, #fff, transparent),
+              #ffa949 url('../img/mountains.jpg') no-repeat center */
+}
+
+.search-section {
+  @include flex-column();
+  padding: 5rem 0;
+  /* justify-content: center;
+  height: 50vh; */
+  & .main-heading {
+    margin-bottom: 1.5rem;
+  }
+}
+
+form {
+  @include flex-row();
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: $mobile) {
+    flex-wrap: wrap;
+  }
+}
+
+input[type="search"] {
+  width: 33%;
+  border: none;
+  // background: #eee;
+  background: $white;
+  box-shadow: 0 0 0 3px #ddd;
+  transition: all 0.4s;
+  padding: 0.75rem 1rem;
+  @media screen and (max-width: $mobile) {
+    width: 90%;
+  }
+}
+
+input:focus {
+  outline-width: 0;
+  background: $white;
+  box-shadow: 0 0 0 4px #aaa;
+}
+
+input[type="submit"] {
+  border: none;
+  border-radius: 40px;
+  background: #0063db; // $flickr-black;
+  color: white;
+  margin: 0 1rem;
+  padding: 0.75rem 2.5rem;
+  transition: all 0.4s;
+  &:hover {
+    cursor: pointer;
+    transform: translateX(1.125rem);
+    box-shadow: 0 0 0 4px rgba(0,99,219, 0.33);
+    @media screen and (max-width: $mobile) {
+      transform: translateX(0);
+    }
+  }
+  @media screen and (max-width: $mobile) {
+    margin: 2rem 0;
+  }
+}

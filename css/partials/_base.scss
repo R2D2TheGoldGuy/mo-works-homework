@@ -1,0 +1,14 @@
+// My Styles
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  @include remove-default();
+}
+
+.container {
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+}

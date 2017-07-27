@@ -1,0 +1,33 @@
+/* Static footer
+footer {
+  min-height: 66vh; // min-height: 53.325vh;
+  flex-direction: column;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-around;
+  background-color: $flickr-black;
+  color: white;
+  width: 100%;
+  padding: 0.75rem 0;
+} 
+*/
+
+.sticky-footer {
+  min-height: calc(100vh - 50px);
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background: $flickr-black;
+  color: $white;
+  padding: 0.75rem 0;
+}

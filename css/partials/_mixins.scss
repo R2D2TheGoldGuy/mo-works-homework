@@ -1,0 +1,22 @@
+// Mixins
+@mixin unordered-lists {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  @content;
+}
+
+@mixin remove-default {
+  text-decoration: none;
+  color: white;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
