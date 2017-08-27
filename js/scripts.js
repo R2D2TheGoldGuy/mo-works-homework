@@ -2,17 +2,24 @@ $(document).ready(function() {
 
   // If User Pressed Enter To Search
   $("#search").keypress(function(event) {
-    
-    if (event.which === 13) {
-        
+      
+    var inputValue = document.getElementById("searchValue").value;
+    var nothing = "";
+      
+    if (event.which === 13 && inputValue === nothing) {
+        $("#gallery").css('display', 'none');
+
+    } else if (event.which === 13 && inputValue !== nothing) {
+
+        $("#gallery").css('display', 'flex');
+
         // Variables - They will be the 3 arguments for the ajax method.
         var url = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?"; // XML Version: https://api.flickr.com/services/feeds/photos_public.gne
-        var inputValue = document.getElementById("searchValue").value;
         var APIsettings = {
           tags: inputValue,
           format: "json"
         }  
-        
+
         function callbackFunction(data) { // Generate HTML with server response data
           var generatedHTML = '<ul class="gallery-photos">';
           // items property is referencing the "key" in the url
@@ -25,11 +32,13 @@ $(document).ready(function() {
           generatedHTML += '</ul>';
           $("#gallery").html(generatedHTML);
         };
-        
+
         $.getJSON(url, APIsettings, callbackFunction); 
-        
+
+
+
     }
-    
+
   });
   
   $("#search").submit(function(event) {
