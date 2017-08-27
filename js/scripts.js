@@ -2,21 +2,33 @@ $(document).ready(function() {
 
   // If User Pressed Enter To Search
   $("#search").keypress(function(event) {
-      
+    
     var inputValue = document.getElementById("searchValue").value;
     var nothing = "";
       
     if (event.which === 13 && inputValue === nothing) {
-        $(".container > ul").removeClass("gallery-photos");
-
+        
+        // Method 1 & 2: 
+        gallery.remove(); 
+        
+        // Method 3: $(".background-color + .container > ul").removeAttr("id");
+        
     } else if (event.which === 13 && inputValue !== nothing) {
-
-        $(".container > ul").addClass("gallery-photos");
+        
+        // Method 1:
+        $(".background-color + .container").append('<ul id="gallery" class="gallery-photos"></ul>');
+        
+        /* Method 2:
+        var recreateGallery = document.createElement("div");
+        $(recreateGallery).attr({"id": "gallery", "class": "gallery-photos"});
+        $(".background-color + .container").append(recreateGallery); */
+        
+        // Method 3: $(".background-color + .container > ul").attr("id", "gallery");
 
         // Variables - They will be the 3 arguments for the ajax method.
         var url = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?"; // XML Version: https://api.flickr.com/services/feeds/photos_public.gne
         var APIsettings = {
-          tags: inputValue,
+          tags: inputValue, // User's input
           format: "json"
         }  
 
