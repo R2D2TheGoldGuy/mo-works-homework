@@ -8,22 +8,24 @@ $(document).ready(function() {
       
     if (event.which === 13 && inputValue === nothing) {
         
-        // Method 1 & 2: 
-        gallery.remove(); 
+        // Method 1 & 2: gallery.remove(); 
         
-        // Method 3: $(".background-color + .container > ul").removeAttr("id");
+        // Method 3: 
+        $(".background-color + .container > ul").removeAttr("id");
         
     } else if (event.which === 13 && inputValue !== nothing) {
         
-        // Method 1:
-        $(".background-color + .container").append('<ul id="gallery" class="gallery-photos"></ul>');
+        // Method 1: $(".background-color + .container").append('<ul id="gallery" class="gallery-photos"></ul>');
         
         /* Method 2:
         var recreateGallery = document.createElement("div");
         $(recreateGallery).attr({"id": "gallery", "class": "gallery-photos"});
         $(".background-color + .container").append(recreateGallery); */
         
-        // Method 3: $(".background-color + .container > ul").attr("id", "gallery");
+        // Note: The problem with method 1 and 2 is that every time you press the enter key, it will continue to create duplicated elements. I'm not sure how to stop that yet.
+        
+        // Method 3: 
+        $(".background-color + .container > ul").attr("id", "gallery");
 
         // Variables - They will be the 3 arguments for the ajax method.
         var url = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?"; // XML Version: https://api.flickr.com/services/feeds/photos_public.gne
