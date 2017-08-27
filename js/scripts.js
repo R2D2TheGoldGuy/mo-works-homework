@@ -7,11 +7,11 @@ $(document).ready(function() {
     var nothing = "";
       
     if (event.which === 13 && inputValue === nothing) {
-        $("#gallery").css('display', 'none');
+        $(".container > ul").removeClass("gallery-photos");
 
     } else if (event.which === 13 && inputValue !== nothing) {
 
-        $("#gallery").css('display', 'flex');
+        $(".container > ul").addClass("gallery-photos");
 
         // Variables - They will be the 3 arguments for the ajax method.
         var url = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?"; // XML Version: https://api.flickr.com/services/feeds/photos_public.gne
